@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+* {
+  font-family: sans-serif;
+}
+
+@theme {
+  --color-primary: #fe9900;
+  --color-secondary: blue;
+  --color-secondary-500: green;
+  --color-tertiary-500: #7f4cef;
+  --color-tertiary-300: #f3e9ff;
+  --color-tertiary-600: #be1d3e;
+  --color-soft: rgb(220, 216, 216);
+}
+
+body {
+  @apply flex flex-col items-center;
+  /* color: rgba(128, 0, 128, 0.322); */
+}
+
+h2 {
+  @apply text-2xl font-bold;
+}
+
+.primary {
+  @apply text-white bg-primary cursor-pointer;
+}

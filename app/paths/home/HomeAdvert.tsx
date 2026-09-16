@@ -1,0 +1,33 @@
+import Image from "~/components/Image";
+
+export default function HomeAdvert() {
+  const adverts = [
+    "deal/Banger-Deals.gif",
+    "deal/call-to-order.gif",
+    "deal/clearance-sales.gif",
+    "deal/DEALS.gif",
+    "deal/buy-two-pay-for-one.gif",
+    "deal/deals-of-the-day-HMD.jpg",
+  ];
+
+  return (
+    <main className="w-full shadow-lg  flex px-2 py-4 rounded-2xl h-60 my-3">
+      {adverts.map((advert) => (
+        <div
+          key={advert}
+          className=" cursor-pointer w-[calc(100%/6)] mx-2 flex items-center justify-center bg-soft rounded-2xl overflow-hidden h-full"
+        >
+          <Image src={advert} alt={advert} />
+        </div>
+      ))}
+      {/* {lists.map((list) => (
+        <div
+          key={list}
+          className="w-[calc(100%/6)] mx-2 flex items-center justify-center bg-soft rounded-2xl h-full"
+        >
+          <FaStar size={30} className="rounded-full bg-white text-soft p-1" />
+        </div>
+      ))} */}
+    </main>
+  );
+}
