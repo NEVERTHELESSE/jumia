@@ -15,7 +15,7 @@
 }
 
 body {
-  @apply flex flex-col items-center;
+  /* @apply flex flex-col items-center; */
   /* color: rgba(128, 0, 128, 0.322); */
 }
 

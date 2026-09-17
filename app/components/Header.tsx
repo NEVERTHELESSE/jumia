@@ -5,7 +5,7 @@ const Advert = lazy(() => import("./Advert"));
 
 export default function Header() {
   return (
-    <header className="w-full z-100 ">
+    <header className=" z-100 ">
       {/* <Suspense fallback="loading">
         <Advert />
       </Suspense> */}

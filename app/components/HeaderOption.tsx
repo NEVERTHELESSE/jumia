@@ -24,9 +24,9 @@ export default function HeaderOption() {
     <section className="flex">
       <main className={buttonStyle}>
         <button onClick={toggleAccountDetail} className={buttonStyle}>
-          <FiUser />
+          <FiUser className="text-2xl sm:text-1xl" />
 
-          <span className="ml-2">Account</span>
+          <span className="ml-2 hidden sm:flex">Account</span>
         </button>
 
         <section
@@ -42,7 +42,7 @@ export default function HeaderOption() {
                   key={id}
                   className="p-2 flex cursor-pointer hover:bg-soft rounded-lg  items-center"
                 >
-                  <span className="mr-3">{icon}</span>
+                  <span className=" mr-3">{icon}</span>
                   {title}
                 </li>
               ))}
@@ -53,10 +53,10 @@ export default function HeaderOption() {
       <main className={buttonStyle}>
         <button
           onClick={toggleHelpDetails}
-          className="flex items-center cursor-pointer"
+          className="flex items-center hidden sm:flex cursor-pointer"
         >
           <AiFillQuestionCircle />
-          <span className="ml-2">Help</span>
+          <span className="ml-2 ">Help</span>
         </button>
         <section
           className={`absolute top-10 w-50 shadow p-2 rounded-lg ${showHelpDetail ? "flex " : "hidden"}`}
@@ -72,7 +72,7 @@ export default function HeaderOption() {
             ))}
             <button className="primary w-full p-2 rounded-lg shadow my-2 flex justify-center items-center ">
               <FiMessageSquare />
-              <span className="ml-2">Live Chat</span>
+              <span className="ml-2 ">Live Chat</span>
             </button>
             <button className="border-green-400 border w-full p-2 rounded-lg shadow flex text-green-400 justify-center items-center ">
               <BsWhatsapp />
@@ -82,8 +82,8 @@ export default function HeaderOption() {
         </section>
       </main>
       <button className={buttonStyle}>
-        <FiShoppingCart />
-        <span className="ml-2">Cart</span>
+        <FiShoppingCart className="text-2xl sm:text-1xl" />
+        <span className="ml-2 hidden sm:flex">Cart</span>
       </button>
     </section>
   );

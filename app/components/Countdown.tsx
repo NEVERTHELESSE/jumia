@@ -26,7 +26,7 @@ export default function Countdown() {
   }, []);
 
   return (
-    <main className="bg-white text-tertiary-600 flex items-center rounded-2xl p-2">
+    <main className="bg-white text-tertiary-600 flex items-center rounded-lg sm:rounded-2xl p-1 sm:p-2">
       <FiClock />
       <p className="ml-2 ">
         <span>{time(hour)}h : </span>
