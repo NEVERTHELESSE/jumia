@@ -1,14 +1,16 @@
 import { lazy, Suspense } from "react";
 import AdvertLoading from "~/loading/AdvertLoading";
+import CategoryLoading from "~/loading/CategoryLoading";
+import HeroLoading from "~/loading/HeroLoading";
 
+const Categories = lazy(() => import("../paths/home/Categories"));
 const HomeAdvert = lazy(() => import("../paths/home/HomeAdvert"));
 const HomeDeals = lazy(() => import("../paths/home/HomeDeals"));
 const Hero = lazy(() => import("../paths/home/Hero"));
 const FlashSales = lazy(() => import("../paths/home/FlashSales"));
 const Voucher = lazy(() => import("../paths/home/Voucher"));
 const SweetDeals = lazy(() => import("../paths/home/SweetDeals"));
-const Mosts = lazy(() => import("../paths/home/Most"));
-const Brands = lazy(() => import("../paths/home/Brand"));
+const Reuse = lazy(() => import("../paths/home/Reuse"));
 
 export function meta() {
   return [
@@ -23,7 +25,11 @@ export function meta() {
 export default function home() {
   return (
     <section className="my-3">
-      <Suspense fallback="loading...">
+      <Suspense fallback={<CategoryLoading />}>
+        <Categories />
+      </Suspense>
+
+      <Suspense fallback={<HeroLoading />}>
         <Hero />
       </Suspense>
       <Suspense fallback={<AdvertLoading />}>
@@ -41,11 +47,9 @@ export default function home() {
       <Suspense fallback={<AdvertLoading />}>
         <HomeDeals />
       </Suspense>
+
       <Suspense fallback={<AdvertLoading />}>
-        <Mosts />
-      </Suspense>
-      <Suspense fallback={<AdvertLoading />}>
-        <Brands />
+        <Reuse />
       </Suspense>
     </section>
   );

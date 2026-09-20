@@ -1,6 +1,7 @@
 import { FaSearch } from "react-icons/fa";
 import Logo from "./Logo";
 import HeaderOption from "./HeaderOption";
+import Search from "./Search";
 
 export default function Navigation() {
   // const options = ["👤My Account", "🍔Orders", "♥Wishlist"];
@@ -12,13 +13,13 @@ export default function Navigation() {
 
         <form
           action=""
-          className="bg-soft w-full mx-2 sm:w-[50%] hidden sm:flex items-center pl-4 rounded-full"
+          className="bg-soft relative z-70 w-full mx-2 py-1 pr-1 sm:w-[50%] hidden sm:flex items-center pl-4 rounded-full"
         >
           <FaSearch />
           <input
             type="text"
             placeholder="Search products, brands and categories"
-            className=" p-2 sm:w- w-full focus:outline-none"
+            className=" p-2 sm:w-full z-10 focus:outline-none "
           />
           <button
             type="submit"
@@ -26,21 +27,12 @@ export default function Navigation() {
           >
             Search
           </button>
+          {/* <div className="absolute bg-white h-45 rounded-2xl w-full top-10 left-0"></div> */}
         </form>
 
         <HeaderOption />
       </div>
-      <form
-        action=""
-        className="bg-soft w-full mx-2 flex sm:hidden items-center pl-4 rounded-full"
-      >
-        <FaSearch />
-        <input
-          type="text"
-          placeholder="Search products, brands and categories"
-          className=" p-2 sm:w- w-full focus:outline-none"
-        />
-      </form>
+      <Search />
     </section>
   );
 }

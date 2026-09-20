@@ -3,6 +3,7 @@ import FlashSalesInfo from "./FlashSalesInfo";
 import Countdown from "~/components/Countdown";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { sales } from "~/data/sales";
+import { Link } from "react-router";
 
 export default function FlashSales() {
   return (
@@ -20,7 +21,9 @@ export default function FlashSales() {
 
       <div className="flex overflow-hidden">
         {sales.map(({ id, src, numberOfItem, price, rate, title }) => (
-          <div
+          <Link
+            // to={title}
+            to={`product`}
             key={id}
             className="min-w-50 sm:min-w-55 mr-2 sm:mr-4 cursor-pointer overflow-hidden h-[calc(100%-2rem)] bg-white rounded-2xl"
           >
@@ -33,7 +36,7 @@ export default function FlashSales() {
               rate={rate}
               title={title}
             />
-          </div>
+          </Link>
         ))}
       </div>
     </main>

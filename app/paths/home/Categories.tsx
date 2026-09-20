@@ -1,26 +1,30 @@
 import { FiHome } from "react-icons/fi";
+import { HiOutlineComputerDesktop } from "react-icons/hi2";
+import { IoIosPhonePortrait } from "react-icons/io";
+import { IoBagAddOutline } from "react-icons/io5";
+import { PiCookingPotLight } from "react-icons/pi";
 
 export default function Categories() {
   const categories = [
     {
       id: "1",
       title: "OfficialStore",
-      icon: <FiHome />,
+      icon: <IoBagAddOutline />,
     },
     {
       id: "2",
-      title: "Applications",
-      icon: <FiHome />,
+      title: "Computer",
+      icon: <HiOutlineComputerDesktop />,
     },
     {
       id: "3",
       title: "Phone&Tablets",
-      icon: <FiHome />,
+      icon: <IoIosPhonePortrait />,
     },
     {
       id: "4",
-      title: "Health&Beauty",
-      icon: <FiHome />,
+      title: "Appliance",
+      icon: <PiCookingPotLight />,
     },
     {
       id: "5",
@@ -29,12 +33,12 @@ export default function Categories() {
     },
     {
       id: "7",
-      title: "Electronic",
+      title: "Fashion",
       icon: <FiHome />,
     },
     {
       id: "8",
-      title: "Electronic",
+      title: "Supermarket",
       icon: <FiHome />,
     },
     {

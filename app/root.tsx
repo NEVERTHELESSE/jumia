@@ -33,11 +33,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="flex flex-col overflow-x-hidden items-center p-4 md:px-20">
-        <section className="w-full">
-          <Header />
-          {children}
-        </section>
+      <body className="flex flex-col overflow-x-hidden items-center ">
+        <Header />
+        <section className="w-full md:px-30">{children}</section>
         <ScrollRestoration />
         <Scripts />
       </body>

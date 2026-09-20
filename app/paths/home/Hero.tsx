@@ -29,7 +29,7 @@ export default function Hero() {
           {details.map(({ id, imageUrl }) => (
             <div
               key={id}
-              className="min-w-full min-h-50 rounded-2xl overflow-hidden"
+              className="min-w-full h-100 rounded-2xl overflow-hidden"
             >
               <Image src={imageUrl} alt="image" />
             </div>

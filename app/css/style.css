@@ -6,17 +6,24 @@
 
 @theme {
   --color-primary: #fe9900;
+  --color-primary-300: #de9a34;
+  --color-primary-500: #de9a34;
   --color-secondary: blue;
   --color-secondary-500: green;
+  --color-secondary-300: oklch(62.3% 0.214 259.815);
+  --color-secondary-400: oklch(54.6% 0.245 262.881);
   --color-tertiary-500: #7f4cef;
   --color-tertiary-300: #f3e9ff;
   --color-tertiary-600: #be1d3e;
+  --color-tertiary-400: #f3e9ff;
   --color-soft: rgb(220, 216, 216);
+  --color-load: gray;
 }
 
 body {
   /* @apply flex flex-col items-center; */
   /* color: rgba(128, 0, 128, 0.322); */
+  background: rgb(241, 241, 242);
 }
 
 h2 {
@@ -25,4 +32,8 @@ h2 {
 
 .primary {
   @apply text-white bg-primary cursor-pointer;
+}
+
+h4 {
+  @apply font-black;
 }

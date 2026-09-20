@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { AiFillQuestionCircle } from "react-icons/ai";
-import { BsWhatsapp } from "react-icons/bs";
+import { BsQuestionCircle, BsWhatsapp } from "react-icons/bs";
 import { FiMessageSquare, FiShoppingCart, FiUser } from "react-icons/fi";
+import { Link } from "react-router";
 import { accounts, options } from "~/data/navigates";
 
 export default function HeaderOption() {
@@ -32,15 +33,18 @@ export default function HeaderOption() {
         <section
           className={`absolute   bg-white top-10 w-50 shadow p-2 rounded-lg ${showAccountDetail ? "flex " : "hidden"}`}
         >
-          <div className="w-full">
-            <button className="primary w-full p-2 rounded-lg shadow ">
+          <div className="w-full ">
+            <Link
+              to="/login"
+              className="primary flex w-full p-2 rounded-lg shadow "
+            >
               Sign In
-            </button>
+            </Link>
             <ul>
               {accounts.map(({ id, title, icon }) => (
                 <li
                   key={id}
-                  className="p-2 flex cursor-pointer hover:bg-soft rounded-lg  items-center"
+                  className="p-2 my-2 flex cursor-pointer hover:bg-soft rounded-lg  items-center"
                 >
                   <span className=" mr-3">{icon}</span>
                   {title}
@@ -53,9 +57,9 @@ export default function HeaderOption() {
       <main className={buttonStyle}>
         <button
           onClick={toggleHelpDetails}
-          className="flex items-center hidden sm:flex cursor-pointer"
+          className=" items-center hidden sm:flex cursor-pointer"
         >
-          <AiFillQuestionCircle />
+          <BsQuestionCircle className="text-2xl sm:text-1xl" />
           <span className="ml-2 ">Help</span>
         </button>
         <section
@@ -81,10 +85,10 @@ export default function HeaderOption() {
           </ul>
         </section>
       </main>
-      <button className={buttonStyle}>
+      <Link to="/cart" className={buttonStyle}>
         <FiShoppingCart className="text-2xl sm:text-1xl" />
         <span className="ml-2 hidden sm:flex">Cart</span>
-      </button>
+      </Link>
     </section>
   );
 }

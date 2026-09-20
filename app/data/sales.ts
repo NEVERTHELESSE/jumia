@@ -13,7 +13,7 @@ export const sales = [
   },
   {
     id: "2",
-    title: "Ace Elec 20000 Mah Ultra Slim  Heavy Bass",
+    title: "Ace Elec 20000 Mah Ultra Slim Heavy Bass",
     src: ["products/product2.jpg", "products/product1.jpg"],
     price: 4334,
     numberOfItem: 57,
