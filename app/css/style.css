@@ -33,7 +33,3 @@ h2 {
 .primary {
   @apply text-white bg-primary cursor-pointer;
 }
-
-h4 {
-  @apply font-black;
-}

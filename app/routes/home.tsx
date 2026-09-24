@@ -2,12 +2,13 @@ import { lazy, Suspense } from "react";
 import AdvertLoading from "~/loading/AdvertLoading";
 import CategoryLoading from "~/loading/CategoryLoading";
 import HeroLoading from "~/loading/HeroLoading";
+import FlashSales from "~/paths/home/FlashSales";
 
 const Categories = lazy(() => import("../paths/home/Categories"));
 const HomeAdvert = lazy(() => import("../paths/home/HomeAdvert"));
 const HomeDeals = lazy(() => import("../paths/home/HomeDeals"));
 const Hero = lazy(() => import("../paths/home/Hero"));
-const FlashSales = lazy(() => import("../paths/home/FlashSales"));
+
 const Voucher = lazy(() => import("../paths/home/Voucher"));
 const SweetDeals = lazy(() => import("../paths/home/SweetDeals"));
 const Reuse = lazy(() => import("../paths/home/Reuse"));
@@ -35,9 +36,7 @@ export default function home() {
       <Suspense fallback={<AdvertLoading />}>
         <HomeAdvert />
       </Suspense>
-      <Suspense fallback={<AdvertLoading />}>
-        <FlashSales />
-      </Suspense>
+      <FlashSales />
       <Suspense fallback={<AdvertLoading />}>
         <Voucher />
       </Suspense>

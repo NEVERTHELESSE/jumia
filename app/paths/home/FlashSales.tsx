@@ -4,8 +4,28 @@ import Countdown from "~/components/Countdown";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { sales } from "~/data/sales";
 import { Link } from "react-router";
+import { useEffect, useState } from "react";
+import { supabase } from "~/lib/supabase";
+import CartLoading from "~/loading/CartLoading";
 
 export default function FlashSales() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getProduct();
+  }, []);
+  type d = { data: any; error: any };
+  async function getProduct() {
+    const { data, error }: d = await supabase.from("product").select("*");
+    if (error) {
+      console.log(error);
+      return;
+    } else {
+      console.log(data);
+      setProducts(data.length > 1 ? data : []);
+    }
+  }
+
   return (
     <main className="sm:h-125 my-4 rounded-2xl bg-tertiary-600 p-4">
       <div className="flex justify-between mb-3">
@@ -19,26 +39,32 @@ export default function FlashSales() {
         </button>
       </div>
 
-      <div className="flex overflow-hidden">
-        {sales.map(({ id, src, numberOfItem, price, rate, title }) => (
-          <Link
-            // to={title}
-            to={`product`}
-            key={id}
-            className="min-w-50 sm:min-w-55 mr-2 sm:mr-4 cursor-pointer overflow-hidden h-[calc(100%-2rem)] bg-white rounded-2xl"
-          >
-            <div className="size-50 sm:size-60 hover:scale-105 duration-200 ">
-              <Image src={src[0]} alt="bass" />
-            </div>
-            <FlashSalesInfo
-              numberOfItem={numberOfItem}
-              price={price}
-              rate={rate}
-              title={title}
-            />
-          </Link>
-        ))}
-      </div>
+      {products.length > 1 ? (
+        <div className="flex overflow-hidden">
+          {products.map(
+            ({ id, productImage, numberOfItem, price, rate, title }) => (
+              <Link
+                // to={title}
+                to={`product`}
+                key={id}
+                className="w-50 sm:min-w-55 mr-2 sm:mr-4 cursor-pointer overflow-hidden h-[calc(100%-2rem)] bg-white rounded-2xl"
+              >
+                <div className="size-50  sm:size-60 hover:scale-105 duration-200 ">
+                  <Image src={productImage[0]} alt="bass" />
+                </div>
+                <FlashSalesInfo
+                  numberOfItem={numberOfItem}
+                  price={price}
+                  rate={rate}
+                  title={title}
+                />
+              </Link>
+            ),
+          )}
+        </div>
+      ) : (
+        <CartLoading />
+      )}
     </main>
   );
 }

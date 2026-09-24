@@ -2,9 +2,23 @@ import { FaSearch } from "react-icons/fa";
 import Logo from "./Logo";
 import HeaderOption from "./HeaderOption";
 import Search from "./Search";
+import { supabase } from "../lib/supabase";
+import { useEffect, useState } from "react";
 
 export default function Navigation() {
-  // const options = ["👤My Account", "🍔Orders", "♥Wishlist"];
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    getProduct();
+  }, []);
+
+  async function getProduct() {
+    const { data, error } = await supabase.from("user").select("*");
+    if (error) {
+      console.log(error);
+      return;
+    }
+    // console.log(data);
+  }
 
   return (
     <section className="w-full ">

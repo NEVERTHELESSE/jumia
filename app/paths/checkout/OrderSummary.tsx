@@ -1,7 +1,15 @@
+import axios from "axios";
 import { RiCoupon2Line } from "react-icons/ri";
 import { Link } from "react-router";
 
 export default function OrderSummary() {
+  async function submitOrder() {
+    await axios
+      .post(import.meta.env.VITE_APIURL + "/api/OpayPayment")
+      .then((res) => console.log(res.data))
+      .catch((e) => console.log(e));
+  }
+
   return (
     <main className="w-[30%] ">
       <div className="w-full p-2 bg-white shadow-lg rounded-lg">
@@ -28,7 +36,10 @@ export default function OrderSummary() {
             <button>Apply</button>
           </div>
         </div>
-        <button className="w-full bg-soft p-3 rounded-lg my-4 font-black text-white">
+        <button
+          className="w-full bg-soft p-3 rounded-lg my-4 font-black text-white"
+          onClick={submitOrder}
+        >
           Confirm Order
         </button>
         <p className="text-center">(Complete the steps in order to proceed)</p>

@@ -21,8 +21,8 @@ export default function FlashSalesInfo({
           <h4 className="mx-1">{rate}</h4>
           <p>(1848844)</p>
         </div>
-        <div className="flex text-[12px] items-center">
-          <h4>{price}</h4>
+        <div className="flex my-2 items-center">
+          <h4>₦ {price.toLocaleString()}</h4>
           <h6 className="ml-2 bg-green-600 px-1 text-white rounded-lg">-46%</h6>
         </div>
       </div>

@@ -9,7 +9,6 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActive((prev) => (prev == carousel.length - 1 ? 0 : prev + 1));
-      console.log(active);
     }, 5000);
     interval;
     return () => {
