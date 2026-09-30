@@ -8,7 +8,7 @@ type productT = {
 export default function ShareProduct({ id }: productT) {
   return (
     <section>
-      <h3>SHARE THIS PRODUCT</h3>
+      <h4>SHARE THIS PRODUCT</h4>
 
       <div className="flex">
         <Link to={`https://facebook/${id}`}>

@@ -12,7 +12,7 @@ export default function DeliveryAssurance() {
         />
         <div className="ml-3">
           <div className="flex justify-between w-full">
-            <h3>Pickup Station </h3>
+            <h4>Pickup Station </h4>
             <Link to="pickupStation" className="text-right text-secondary">
               Details
             </Link>
@@ -34,7 +34,7 @@ export default function DeliveryAssurance() {
         />
         <div className="ml-3">
           <div className="flex justify-between w-full">
-            <h3>Door Delivery </h3>
+            <h4>Door Delivery </h4>
             <Link to="pickupStation" className="text-right text-secondary">
               Details
             </Link>
@@ -56,7 +56,7 @@ export default function DeliveryAssurance() {
         />
         <div className="ml-3">
           <div className="flex justify-between w-full">
-            <h3>Return Policy</h3>
+            <h4>Return Policy</h4>
           </div>
           <p className="my-1">
             Free return within 7 days for All eligible items{" "}
@@ -76,7 +76,7 @@ export default function DeliveryAssurance() {
         />
         <div className="ml-3">
           <div className="flex justify-between w-full">
-            <h3>Warranty</h3>
+            <h4>Warranty</h4>
           </div>
           <p className="my-1">
             DELTA ULTRA - 5 YEARS WARRANTY After-Sales-Services:

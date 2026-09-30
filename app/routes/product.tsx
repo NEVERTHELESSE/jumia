@@ -50,11 +50,11 @@ export default function product() {
             </div>
             <div className="ml-8">
               <StoreBrand />
-              <h3>
+              <h4>
                 ECOFLOW DELTA 3 ULTRA Portable Power Station 3600W Output Home
                 Power, 3072Wh LifeP04 Battery, Portable Solar Generator for Home
                 Use, Camping Accessories & RV Backup
-              </h3>
+              </h4>
               <p>
                 Brand: <span>ECOFLOW |</span>
                 <Link to="similar product" className="text-secondary">

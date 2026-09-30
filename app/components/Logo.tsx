@@ -1,11 +1,17 @@
 import { FaStar } from "react-icons/fa";
+import { FaBagShopping, FaBasketShopping } from "react-icons/fa6";
 import { Link } from "react-router";
+import Image from "./Image";
 
 export default function Logo() {
   return (
-    <Link to="/" className="flex items-center">
-      <h2>Jumia</h2>
-      <FaStar className="bg-primary rounded-full text-2xl p-1 ml-1 text-white" />
+    <Link
+      to="/"
+      title="Go to Eshop home page"
+
+      className="flex items-center h-12 w-24"
+    >
+      <Image src="eshop.png" alt="logo" />
     </Link>
   );
 }

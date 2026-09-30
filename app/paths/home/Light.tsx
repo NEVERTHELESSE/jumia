@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 export default function Light({ title }: reuse) {
   return (
-    <main className="w-full rounded-2xl h-125 bg-tertiary-400 mb-4 p-4">
+    <main className="w-full rounded-2xl h-125 bg-tertiary-400 mb-4 p-4 shadow">
       <div className="flex justify-between mb-2">
         <h3 className="text-2xl mr-3 font-bold capitalize text-tertiary-500">
           {title}

@@ -9,6 +9,11 @@ export type flashSaleType = {
   price: number;
   rate: number;
 };
+export type productDetailType = {
+  title: string;
+  price: number;
+  rate: number;
+};
 
 export type reuse = {
   title: string;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { BsQuestionCircle, BsWhatsapp } from "react-icons/bs";
+import { FaHeart } from "react-icons/fa";
 import { FiMessageSquare, FiShoppingCart, FiUser } from "react-icons/fi";
 import { Link } from "react-router";
 import { accounts, options } from "~/data/navigates";
@@ -24,10 +25,13 @@ export default function HeaderOption() {
   return (
     <section className="flex">
       <main className={buttonStyle}>
-        <button onClick={toggleAccountDetail} className={buttonStyle}>
-          <FiUser className="text-2xl sm:text-1xl" />
+        <button
+          title="favorite"
 
-          <span className="ml-2 hidden sm:flex">Account</span>
+          onClick={toggleAccountDetail}
+          className={buttonStyle}
+        >
+          <FiUser className="text-2xl sm:text-1xl mx-2" />
         </button>
 
         <section
@@ -58,9 +62,9 @@ export default function HeaderOption() {
         <button
           onClick={toggleHelpDetails}
           className=" items-center hidden sm:flex cursor-pointer"
+          title="favorite"
         >
-          <BsQuestionCircle className="text-2xl sm:text-1xl" />
-          <span className="ml-2 ">Help</span>
+          <FaHeart className="text-2xl mx-2 sm:text-1xl" />
         </button>
         <section
           className={`absolute top-10 w-50 shadow p-2 rounded-lg ${showHelpDetail ? "flex " : "hidden"}`}
@@ -85,9 +89,8 @@ export default function HeaderOption() {
           </ul>
         </section>
       </main>
-      <Link to="/cart" className={buttonStyle}>
-        <FiShoppingCart className="text-2xl sm:text-1xl" />
-        <span className="ml-2 hidden sm:flex">Cart</span>
+      <Link to="/cart" className={buttonStyle} title="favorite">
+        <FiShoppingCart className="text-2xl mx-2 sm:text-1xl" />
       </Link>
     </section>
   );

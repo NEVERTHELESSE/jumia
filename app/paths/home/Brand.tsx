@@ -18,12 +18,12 @@ export default function Brand() {
         </button>
       </div>
       <p className="text-white mb-4">up to 70% off</p>
-      <div className="flex flex-wrap justify-between">
+      <div className="flex flex-wrap ">
         {festivals.map(({ id, src, price, rate, title }) => (
           <Link
             to="product"
             key={id}
-            className="w-48 mr-1 mb-3 cursor-pointer overflow-hidden bg-white rounded-lg"
+            className="my-2 w-[calc(100%/6-8px)] mr-2 cursor-pointer overflow-hidden  bg-cover rounded-2xl"
           >
             <div className="w-full h-50 hover:scale-105 duration-200 ">
               <Image src={src[0]} alt="bass" />

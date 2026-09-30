@@ -3,11 +3,11 @@ import AdvertLoading from "~/loading/AdvertLoading";
 import CategoryLoading from "~/loading/CategoryLoading";
 import HeroLoading from "~/loading/HeroLoading";
 import FlashSales from "~/paths/home/FlashSales";
+import Hero from "../paths/home/Hero";
 
 const Categories = lazy(() => import("../paths/home/Categories"));
 const HomeAdvert = lazy(() => import("../paths/home/HomeAdvert"));
 const HomeDeals = lazy(() => import("../paths/home/HomeDeals"));
-const Hero = lazy(() => import("../paths/home/Hero"));
 
 const Voucher = lazy(() => import("../paths/home/Voucher"));
 const SweetDeals = lazy(() => import("../paths/home/SweetDeals"));
@@ -17,7 +17,7 @@ export function meta() {
   return [
     {
       title:
-        "Jumia Nigeria | Online Shopping for Electronics, Fashion, Home, Beauty & Sport",
+        "Eshop | Online Shopping for Electronics, Fashion, Home, Beauty & Sport",
     },
     { name: "Order Online at Ease", content: "Home Page" },
   ];
@@ -25,27 +25,21 @@ export function meta() {
 
 export default function home() {
   return (
-    <section className="my-3">
+    <section className="my-3 px-2">
       <Suspense fallback={<CategoryLoading />}>
         <Categories />
       </Suspense>
-
-      <Suspense fallback={<HeroLoading />}>
-        <Hero />
-      </Suspense>
+      <Hero />
       <Suspense fallback={<AdvertLoading />}>
         <HomeAdvert />
       </Suspense>
       <FlashSales />
-      <Suspense fallback={<AdvertLoading />}>
+      {/* <Suspense fallback={<AdvertLoading />}>
         <Voucher />
-      </Suspense>
-      <Suspense>
-        <SweetDeals />
-      </Suspense>
-      <Suspense fallback={<AdvertLoading />}>
+      </Suspense> */}
+      {/* <Suspense fallback={<AdvertLoading />}>
         <HomeDeals />
-      </Suspense>
+      </Suspense> */}
 
       <Suspense fallback={<AdvertLoading />}>
         <Reuse />

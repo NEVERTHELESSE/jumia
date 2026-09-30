@@ -1,29 +1,54 @@
-import { useState, type ChangeEvent } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import {
   FaApple,
   FaEnvelope,
   FaEye,
   FaEyeSlash,
   FaGoogle,
+  FaUser,
 } from "react-icons/fa";
 import { Link } from "react-router";
 import Logo from "~/components/Logo";
 
-export default function login() {
+export default function signup() {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [hidePassword, setHidePassword] = useState(true);
 
   function togglePasswordShow() {
     setHidePassword((prev) => !prev);
+  }
+  function createAccount(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    console.log(username, email, password, confirmPassword);
   }
 
   return (
     <main className="w-screen flex-col flex items-center justify-center h-screen -ml-20 ">
       <div className="w-100 flex flex-col justify-center items-center rounded-2xl bg-white shadow-2xl sm:p-6 my-4">
         <Logo />
-        <form action="" className="w-full">
-          <h2 className="text-center">Welcome Back</h2>
+        <form action="" className="w-full" onSubmit={createAccount}>
+          <h2 className="text-center">Kindly Create an Account</h2>
+          <div className="relative w-full flex items-center">
+            <input
+              required
+
+              type="text"
+              minLength={3}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setUsername(e.target.value)
+              }
+
+              placeholder="Username"
+              className="w-full border-soft shadow border my-3 p-4 rounded-lg"
+            />
+            <FaUser
+              title="Create a username"
+              className="absolute right-4 cursor-pointer hover:scale-150 duration-500"
+            />
+          </div>
           <div className="relative w-full flex items-center">
             <input
               type="email"
@@ -69,9 +94,19 @@ export default function login() {
               />
             )}
           </div>
+          <input
+            required
+            type={hidePassword ? "password" : "text"}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              setConfirmPassword(e.target.value)
+            }
+            minLength={6}
 
-          <button className="bg-primary rounded-2xl p-4 text-white w-full my-3 hover:bg-secondary duration-300 cursor-pointer">
-            Login
+            placeholder="Confirm Password"
+            className="w-full border-soft shadow border my-3 p-4 rounded-lg  "
+          />
+          <button className="bg-primary rounded-2xl p-4 text-white w-full my-3 hover:bg-secondary duration-500 ">
+            Create Account
           </button>
         </form>
 
@@ -83,23 +118,18 @@ export default function login() {
           </div>
           <button className="flex w-full my-3 items-center rounded-2xl p-4 cursor-pointer bg-soft">
             <FaGoogle />
-            <p className="ml-2">Login with Google Account</p>
+            <p className="ml-2">Signup with Google Account</p>
           </button>
           <button className="flex w-full mt-3 items-center rounded-2xl p-4 cursor-pointer bg-soft">
             <FaApple />
-            <p className="ml-2">Login with Apple Account</p>
+            <p className="ml-2">Signup with Apple Account</p>
           </button>
-        </div>
-        <div className=" w-full flex justify-end">
-          <Link to="/forgetPassword" className="text-tertiary-400 ">
-            Forget Password
-          </Link>
         </div>
       </div>
       <div className="flex">
-        <p>Don't have an account </p>
-        <Link to="/signup" className="ml-3 text-primary">
-          Create one
+        <p>Already have an account </p>
+        <Link to="/login" className="ml-3 text-primary">
+          Login
         </Link>
       </div>
     </main>

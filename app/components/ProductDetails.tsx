@@ -1,20 +1,14 @@
 import { FaStar } from "react-icons/fa";
-import type { flashSaleType } from "~/types/type";
+import type { productDetailType } from "~/types/type";
 
-export default function FlashSalesInfo({
-  numberOfItem,
+export default function ProductDetails({
   title,
   price,
   rate,
-}: flashSaleType) {
+}: productDetailType) {
   return (
     <div className="w-full  ">
-      {numberOfItem != 0 && (
-        <p className="bg-yellow-200 text-center">
-          {numberOfItem} items in stock
-        </p>
-      )}
-      <div className="p-2">
+      <div className="p-2 capitalize">
         <p className="whitespace-nowrap overflow-hidden text-ellipsis">
           {title}
         </p>

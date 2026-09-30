@@ -1,0 +1,7 @@
+:root {
+}
+
+.animate {
+  background: radial-gradient(50% green, blue);
+  padding: 10px;
+}

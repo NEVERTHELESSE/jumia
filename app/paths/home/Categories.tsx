@@ -48,7 +48,7 @@ export default function Categories() {
     },
   ];
   return (
-    <main className="w-full overflow-hidden flex-nowrap border-b-5 border-b-primary hidden sm:flex">
+    <main className="w-full overflow-hidden flex-nowrap border-b-2 border-b-primary hidden sm:flex">
       {categories.map(({ icon, id, title }) => (
         <button
           key={id}

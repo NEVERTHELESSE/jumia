@@ -1,9 +1,9 @@
 import { FaStar } from "react-icons/fa";
 
 export default function CartLoading() {
-  const lists = Array.from({ length: 7 }, (_, number) => number + 1);
+  const lists = Array.from({ length: 2 }, (_, number) => number + 1);
   return (
-    <div className="flex overflow-hidden">
+    <div className="flex w-full overflow-hidden">
       {lists.map((list) => (
         <div
           key={list}

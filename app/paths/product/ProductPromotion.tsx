@@ -4,7 +4,7 @@ import { Link } from "react-router";
 export default function ProductPromotion() {
   return (
     <div>
-      <h3 className="font-bold my-4">PROMOTIONS</h3>
+      <h4 className="font-bold my-4">PROMOTIONS</h4>
 
       <div className="">
         <div className="flex items-center">

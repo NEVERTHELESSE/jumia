@@ -9,7 +9,9 @@ import {
 
 import type { Route } from "./+types/root";
 import "./css/style.css";
+import "./css/animate.css";
 import Header from "./components/Header";
+import { lazy, Suspense } from "react";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -24,6 +26,7 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+const Footer = lazy(() => import("./components/footer/Footer"));
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -33,9 +36,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body className="flex flex-col overflow-x-hidden items-center ">
+      <body className="flex flex-col overflow-x-hidden items-center light">
         <Header />
         <section className="w-full md:px-30">{children}</section>
+        <Suspense fallback="loading">
+          <Footer />
+        </Suspense>
         <ScrollRestoration />
         <Scripts />
       </body>
