@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router";
 import Logo from "~/components/Logo";
+import { supabase } from "~/lib/supabase";
 
 export default function signup() {
   const [username, setUsername] = useState("");
@@ -20,13 +21,30 @@ export default function signup() {
   function togglePasswordShow() {
     setHidePassword((prev) => !prev);
   }
-  function createAccount(e: FormEvent<HTMLFormElement>) {
+  async function createAccount(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    e.preventDefault();
+
+    const { data, error } = await supabase
+      .from("user")
+      .insert({
+        username,
+        email,
+        password,
+      })
+      .select();
+    if (error) {
+      console.log(error);
+      return;
+    }
+    console.log("insertId:", data);
+
     console.log(username, email, password, confirmPassword);
   }
 
   return (
-    <main className="w-screen flex-col flex items-center justify-center h-screen -ml-20 ">
+    <main className="w-screen flex-col flex items-center justify-center h-screen -ml-20  ">
       <div className="w-100 flex flex-col justify-center items-center rounded-2xl bg-white shadow-2xl sm:p-6 my-4">
         <Logo />
         <form action="" className="w-full" onSubmit={createAccount}>
